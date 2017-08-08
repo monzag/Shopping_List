@@ -12,3 +12,6 @@ class ShoppingList:
         for item in self.items:
             if item.is_bought == is_bought:
                 print(item)
+
+    def get_total_price(self):
+        return sum(item.get_total_price() for item in self.items)
