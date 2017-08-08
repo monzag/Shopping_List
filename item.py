@@ -12,7 +12,7 @@ class Item:
         return self.__dict__ == other.__dict__
 
     def get_total_price(self):
-        return self.quantity * self.price_per_unit
+        return int(self.unit * self.price_per_unit)
 
     def __str__(self):
         if self.is_bought is True:
@@ -22,4 +22,4 @@ class Item:
             return '[ ] {}, unit: {}, categories: {}'.format(self.name, self.unit, self.categories) + self.show_price()
 
     def show_price(self):
-        return '\n{} zł/{}'.format(self.price_per_unit, self.quantity)
+        return '\n    {} zł/{}'.format(self.price_per_unit, self.quantity)
