@@ -1,5 +1,6 @@
 from item import Item
 from datetime import datetime
+import csv
 
 
 class ShoppingList:
@@ -75,11 +76,11 @@ class ShoppingList:
 
     def get_data_to_save(self):
         list_to_save = []
-        list_to_save.append(self.date)
+        list_to_save.append([self.date.day, self.date.month, self.date.year])
 
         for item in self.items:
             name, quantity, unit, price_per_unit = item.name, item.quantity, item.unit, item.price_per_unit
-            categories = '|'.join(item.categoties)
+            categories = '|'.join(item.categories)
 
             if item.is_bought is True:
                 is_bought = 'done'
