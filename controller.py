@@ -53,6 +53,14 @@ def shopping_menu(shopping_list):
             print(shopping_list.get_total_price())
 
         elif user_choice == 3:
-            # TODO add new item
-            pass
+            add_new_item(shopping_list)
+
+
+def add_new_item(shopping_list):
+    print('This is test')
+    name, quantity, unit, price_per_unit, categories = 'masło', 'szt', 1, 6, ['Food', 'Nabiał']
+    item = Item(name, quantity, unit, price_per_unit, categories)
+    shopping_list.add_item(item)
+    shopping_list.save_data_to_file()
+
 
