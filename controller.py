@@ -2,6 +2,7 @@ from shopping_list import ShoppingList
 from item import Item
 from datetime import datetime
 import view
+import os
 
 
 def main_menu():
@@ -47,13 +48,22 @@ def shopping_menu(shopping_list):
         user_choice = view.get_input()
 
         if user_choice == 1:
-            shopping_list.get_items()
+            get_items_by_attr(shopping_list)
 
         elif user_choice == 2:
             print(shopping_list.get_total_price())
 
         elif user_choice == 3:
             add_new_item(shopping_list)
+
+
+def get_items_by_attr(shopping_list):
+    view.print_options_of_get_items()
+    number = view.get_input()
+    if number == 1:
+        shopping_list.get_items()
+    elif number == 2:
+        shopping_list.get_items(True)
 
 
 def add_new_item(shopping_list):
