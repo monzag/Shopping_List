@@ -16,8 +16,7 @@ def main_menu():
                 shopping_menu(shopping_list)
 
         elif user_choice == 2:
-            # add new shopping list
-            pass
+            create_shopping_list()
 
         view.print_exit_message()
 
