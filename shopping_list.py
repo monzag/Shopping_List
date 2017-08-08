@@ -57,5 +57,13 @@ class ShoppingList:
 
         return item
 
+    @classmethod
+    def get_data_from_file(cls, file_name):
+        file_path = file_name + '.csv'
+        with open(file_path, 'r') as csvfile:
+            splitted_rows = [line.strip().split(',') for line in csvfile]
+
+        return splitted_rows
+
 
 
