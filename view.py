@@ -51,3 +51,9 @@ def get_date():
     if day.isdigit() and month.isdigit() and year.isdigit():
         if 0 < int(day) < 32 and 0 < int(month) < 13 and len(year) == 4:
             return int(day), int(month), int(year)
+
+
+def print_options_of_get_items():
+    options = ['to buy', 'already bought']
+    print('Show items by: ')
+    get_list(options)
