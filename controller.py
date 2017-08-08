@@ -12,9 +12,10 @@ def main_menu():
         view.get_input()
 
         if user_choice == 1:
+            # show items
             pass
 
         elif user_choice == 2:
-            pass
+            shopping_list.get_total_price()
 
     view.print_exit_message()
