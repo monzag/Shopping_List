@@ -38,7 +38,7 @@ def get_shop_name():
 
 
 def print_shopping_menu():
-    options = ['Show items', 'Show total price']
+    options = ['Show items', 'Show total price', 'Add new item']
     get_list(options)
     print_exit_option()
 
