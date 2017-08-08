@@ -15,7 +15,7 @@ class ShoppingList:
                 print(item)
 
     def get_total_price(self):
-        return sum(item.get_total_price() for item in self.items)
+        return 'Total price: {} zł'.format(sum(item.get_total_price() for item in self.items))
 
     @classmethod
     def create_from_csv(cls, file_name):
