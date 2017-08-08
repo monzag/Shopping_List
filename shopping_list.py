@@ -7,3 +7,8 @@ class ShoppingList:
         self.name = name
         self.date = date
         self.items = []
+
+    def get_items(is_bought=False):
+        for item in self.items:
+            if item.is_bought == is_bought:
+                print(item)
