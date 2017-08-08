@@ -33,7 +33,7 @@ class ShoppingList:
     @classmethod
     def create_shopping_list(cls, file_name, row):
         name = file_name
-        day, month, year = row[0], row[1], row[2]
+        day, month, year = int(row[0]), int(row[1]), int(row[2])
         date = datetime(year, month, day)
         shopping_list = ShoppingList(name, date)
 
@@ -41,7 +41,7 @@ class ShoppingList:
 
     @classmethod
     def create_item(cls, row):
-        name, quantity, unit, price_per_unit, categories_list = row[0], row[1], row[2], row[3], row[4]
+        name, quantity, unit, price_per_unit, categories_list = row[0], row[1], int(row[2]), int(row[3]), row[4]
 
         categories = categories_list.split('|')
 
@@ -51,7 +51,7 @@ class ShoppingList:
         else:
             is_bought = False
 
-        item = Item(name, quantity, unit, price_per_unit, categoties, is_bought)
+        item = Item(name, quantity, unit, price_per_unit, categories, is_bought)
 
         return item
 
@@ -90,6 +90,8 @@ class ShoppingList:
             list_to_save.append(row)
 
         return list_to_save
+
+    # TODO sort
 
 
 
