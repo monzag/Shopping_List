@@ -9,12 +9,12 @@ def main_menu():
     user_choice = ''
     while user_choice != 0:
         view.print_main_menu()
-        view.get_input()
+        user_choice = view.get_input()
 
         if user_choice == 1:
             shopping_list.get_items()
 
         elif user_choice == 2:
-            shopping_list.get_total_price()
+            print(shopping_list.get_total_price())
 
     view.print_exit_message()
