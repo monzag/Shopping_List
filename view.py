@@ -1,5 +1,5 @@
 def print_main_menu():
-    options = ['Show items', 'Show total price']
+    options = ['Get shopping list from file', 'Add new shopping list']
     get_list(options)
     print_exit_option()
 
@@ -27,3 +27,17 @@ def get_input():
 
 def print_exit_message():
     print('\nGood bye:) ')
+
+
+def print_error_file():
+    print('\nFile not exist')
+
+
+def get_shop_name():
+    return input('\nType name of shopping list: ')
+
+
+def print_shopping_menu():
+    options = ['Show items', 'Show total price']
+    get_list(options)
+    print_exit_option()
