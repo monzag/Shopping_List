@@ -11,3 +11,5 @@ class Item:
     def __eq__(self, other):
         return self.__dict__ == other.__dict__
 
+    def get_total_price(self):
+        return self.quantity * self.price_per_unit
