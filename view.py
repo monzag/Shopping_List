@@ -41,3 +41,13 @@ def print_shopping_menu():
     options = ['Show items', 'Show total price']
     get_list(options)
     print_exit_option()
+
+
+def get_date():
+    day = input('Day: ')
+    month = input('Month:')
+    year = input('Year: ')
+
+    if day.isdigit() and month.isdigit() and year.isdigit():
+        if 0 < int(day) < 32 and 0 < int(month) < 13 and len(year) == 4:
+            return int(day), int(month), int(year)
