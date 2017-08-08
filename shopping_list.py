@@ -24,7 +24,6 @@ class ShoppingList:
         for row in splitted_data:
             if len(row) < 4:
                 shopping_list = cls.create_shopping_list(file_name, row)
-
             else:
                 item = cls.create_item(row)
                 shopping_list.items.append(item)
@@ -49,7 +48,6 @@ class ShoppingList:
         last_item = -1
         if row[last_item] == 'done':
             is_bought = True
-
         else:
             is_bought = False
 
@@ -74,5 +72,24 @@ class ShoppingList:
 
             for line in list_to_save:
                 writer.writerow(line)
+
+    def get_data_to_save(self):
+        list_to_save = []
+        list_to_save.append(self.date)
+
+        for item in self.items:
+            name, quantity, unit, price_per_unit = item.name, item.quantity, item.unit, item.price_per_unit
+            categories = '|'.join(item.categoties)
+
+            if item.is_bought is True:
+                is_bought = 'done'
+                row = [name, quantity, unit, price_per_unit, categories, is_bought]
+            else:
+                row = [name, quantity, unit, price_per_unit, categories]
+
+            list_to_save.append(row)
+
+        return list_to_save
+
 
 
