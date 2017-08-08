@@ -65,5 +65,14 @@ class ShoppingList:
 
         return splitted_rows
 
+    def save_data_to_file(self):
+        list_to_save = self.get_data_to_save()
+        file_path = self.name + '.csv'
+
+        with open(file_path, 'w') as csvfile:
+            writer = csv.writer(csvfile, delimiter=',')
+
+            for line in list_to_save:
+                writer.writerow(line)
 
 
