@@ -8,3 +8,6 @@ class Item:
         self.categories = categories
         self.is_bought = is_bought
 
+    def __eq__(self, other):
+        return self.__dict__ == other.__dict__
+
