@@ -91,6 +91,9 @@ class ShoppingList:
 
         return list_to_save
 
+    def add_item(self, item):
+        self.items.append(item)
+
     # TODO sort
 
 
