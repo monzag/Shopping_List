@@ -23,3 +23,7 @@ def get_input():
         return int(number)
 
     return None
+
+
+def print_exit_message():
+    print('\nGood bye:) ')
